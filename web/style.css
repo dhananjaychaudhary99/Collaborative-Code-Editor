@@ -36,7 +36,6 @@ body, html {
   font-weight: 700;
   font-size: 15px;
   color: #ffffff;
-  letter-spacing: 0.5px;
 }
 
 .badge {
@@ -66,11 +65,6 @@ select {
   padding: 4px 8px;
   font-size: 13px;
   cursor: pointer;
-  outline: none;
-}
-
-select:focus {
-  border-color: #007acc;
 }
 
 .btn {
@@ -88,13 +82,13 @@ select:focus {
   background-color: #4a4a4a;
 }
 
-.btn-primary {
-  background-color: #0e639c;
-  border-color: #1177bb;
+.btn-danger {
+  background-color: #a82020;
+  border-color: #d83b01;
 }
 
-.btn-primary:hover {
-  background-color: #1177bb;
+.btn-danger:hover {
+  background-color: #c92a2a;
 }
 
 #editor-container {
@@ -112,10 +106,4 @@ select:focus {
   justify-content: space-between;
   padding: 0 12px;
   user-select: none;
-}
-
-#status-bar div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }

@@ -3,64 +3,55 @@ package com.editor.sync;
 import java.io.Serializable;
 
 public class DocumentSync implements Serializable {
-    private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 1L;
 
     public enum ActionType {
         INSERT,
         DELETE,
         REPLACE_ALL,
         CURSOR_MOVE,
-        CLIENT_DISCONNECT
+        CLIENT_DISCONNECT,
+        JOIN_ROOM,
+        AUTH_SUCCESS,
+        AUTH_FAILED
     }
 
     private final ActionType actionType;
-    private final int offset;
-    private final int length;
-    private final String text;
-    private final String clientId;
-    private final int cursorPosition;
+    private int offset;
+    private int length;
+    private String text;
+    private String clientId;
+    private int cursorPosition;
+    private String roomId;
+    private String roomPassword;
 
-    // Document edit constructor
     public DocumentSync(ActionType actionType, int offset, int length, String text, String clientId) {
         this.actionType = actionType;
         this.offset = offset;
         this.length = length;
-        this.text = text != null ? text : "";
+        this.text = text;
         this.clientId = clientId;
-        this.cursorPosition = offset;
     }
 
-    // Cursor position / disconnect constructor
     public DocumentSync(ActionType actionType, String clientId, int cursorPosition) {
         this.actionType = actionType;
-        this.offset = cursorPosition;
-        this.length = 0;
-        this.text = "";
         this.clientId = clientId;
         this.cursorPosition = cursorPosition;
     }
 
-    public ActionType getActionType() {
-        return actionType;
+    public DocumentSync(ActionType actionType, String roomId, String roomPassword, String clientId) {
+        this.actionType = actionType;
+        this.roomId = roomId;
+        this.roomPassword = roomPassword;
+        this.clientId = clientId;
     }
 
-    public int getOffset() {
-        return offset;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getClientId() {
-        return clientId;
-    }
-
-    public int getCursorPosition() {
-        return cursorPosition;
-    }
+    public ActionType getActionType() { return actionType; }
+    public int getOffset() { return offset; }
+    public int getLength() { return length; }
+    public String getText() { return text; }
+    public String getClientId() { return clientId; }
+    public int getCursorPosition() { return cursorPosition; }
+    public String getRoomId() { return roomId; }
+    public String getRoomPassword() { return roomPassword; }
 }

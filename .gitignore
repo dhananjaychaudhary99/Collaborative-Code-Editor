@@ -1,7 +1,7 @@
-﻿target/
+target/
 *.class
-*.jar
-.vscode/
-.idea/
 *.log
-dependency-reduced-pom.xml
+.DS_Store
+*.iml
+.idea/
+.vscode/
