@@ -6,7 +6,7 @@ A lightweight, real-time collaborative code editor built with **Java 17, Swing, 
 
 ## 🌐 Live Demo & Repository
 
-- 🔗 **Live Demo:** [Collaborative Code Editor](https://dhananjaychaudhary99.github.io/Portfolio/)
+- 🔗 **Live Demo:** [Collaborative Code Editor]()
 - 📂 **Source Code:** [GitHub Repository](https://github.com/dhananjaychaudhary99/Collaborative-Code-Editor)
 
 > **Note:** The application is a Java Swing desktop application. The portfolio link serves as a project showcase rather than a browser-based interactive editor.
